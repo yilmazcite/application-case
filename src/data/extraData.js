@@ -1,5 +1,7 @@
 //ALL THE EXTRA DATA TO BE USED:
 
+import jsonData from "../data/data.json";
+
 //BRAND SWITCHING TAB
 export const brandData = [
   {
@@ -48,7 +50,7 @@ export const accordionData = [
       subTitle_1: "",
       subTitle_2: "",
     },
-    isClicked: null,
+    isClicked: false,
   },
   {
     id: 1,
@@ -105,3 +107,48 @@ export const statusColorsData = [
   { id: 3, color: "red", statusMessage: "Error" },
   { id: 4, color: "blue", statusMessage: "Notes" },
 ];
+
+//POSTS DATA:
+export const allData = Object.values(jsonData.posts_by_date);
+export const datesOfPostPublication = Object.keys(jsonData.posts_by_date);
+export const postsData = [];
+
+allData.map((item) => {
+  return item.map((data) => {
+    const dateSliced = data.published_at.split(" ")[0];
+    return postsData.push({
+      date: dateSliced,
+      status: data.status,
+      channel: data.account.channel,
+      message: data.entry.message,
+      image: String(Object.values(data.entry.image)),
+      link: data.link,
+      isPublished: data.is_published,
+    });
+  });
+});
+
+export const postsStatus = [];
+export const postsSortedByStatus = datesOfPostPublication.map((date) => {
+  postsData
+    .filter((post) => post.date === date)
+    .map((item) => postsStatus.push([item.status, item.link, item.channel]));
+  return postsStatus;
+});
+
+export const postsHeaderContent = [];
+export const postsSortedByHeaderContent = datesOfPostPublication.map((date) => {
+  postsData
+    .filter((post) => post.date === date)
+    .map((item) => postsHeaderContent.push([item.date]));
+  return postsHeaderContent;
+});
+
+export const postsContent = [];
+export const postsSortedByContent = datesOfPostPublication.map((date) => {
+  postsContent.push(date);
+  postsData
+    .filter((post) => post.date === date)
+    .map((item) => postsContent.push([item.message, item.image]));
+  return postsContent;
+});

@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { accordionActions } from "../../store/accordion-slice";
 
 const AccordionMenu = () => {
-  const state = useSelector((state) => state.accordionSlice);
+  const initialAccordionState = useSelector((state) => state.accordionSlice);
   const dispatch = useDispatch();
 
   const clickHandler = (id) => {
@@ -11,7 +11,7 @@ const AccordionMenu = () => {
     dispatch(accordionActions.updateMenuItems(id));
   };
 
-  const renderAccordionMenu = state.map((menuItem) => {
+  const renderAccordionMenu = initialAccordionState.map((menuItem) => {
     const isClicked = menuItem.isClicked;
     const menuItem_1 = menuItem.menuSubTitles.subTitle_1;
     const menuItem_2 = menuItem.menuSubTitles.subTitle_2;
