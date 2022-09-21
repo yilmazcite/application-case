@@ -6,11 +6,11 @@ const initialAccordionState = accordionData;
 //reducers:
 const selectMenuItem = (state, action) => {
   if (action.payload === 0) {
-    //disable the notification item
-    /*initialAccordionState
-      .filter((item) => item.id !== 0)
+    initialAccordionState
+      .filter((item) => item.id !== action.payload)
       .map((id) => id.id)
-      .map((item) => (item.isClicked = false));*/
+      .map((id) => (state[id].isClicked = false));
+    //disable the notification item
     return;
   }
   if (state[action.payload].isClicked === true) {
@@ -22,10 +22,6 @@ const selectMenuItem = (state, action) => {
 
 const updateMenuItems = (state, action) => {
   if (action.payload === 0) {
-    /*initialAccordionState
-      .filter((item) => item.id !== 0)
-      .map((id) => id.id)
-      .map((item) => (item.isClicked = false));*/
     //disable the notification item
     return;
   }

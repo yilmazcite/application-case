@@ -1,8 +1,8 @@
 //ALL THE EXTRA DATA TO BE USED:
-
 import jsonData from "../data/data.json";
+import { v4 as uuidv4 } from "uuid";
 
-//BRAND SWITCHING TAB
+//BRAND SWITCHING TAB:
 export const brandData = [
   {
     id: 0,
@@ -41,14 +41,22 @@ export const brandData = [
   },
 ];
 
-//ACCORDION MENU
+//ACCORDION MENU:
 export const accordionData = [
   {
     id: 0,
     menuTitle: "NOTIFICATIONS",
     menuSubTitles: {
-      subTitle_1: "",
-      subTitle_2: "",
+      subTitle_1: {
+        id: uuidv4(),
+        menuItem: "",
+        menuItemIsClicked: true,
+      },
+      subTitle_2: {
+        id: uuidv4(),
+        menuItem: "",
+        menuItemIsClicked: false,
+      },
     },
     isClicked: false,
   },
@@ -56,8 +64,16 @@ export const accordionData = [
     id: 1,
     menuTitle: "SUMMARY",
     menuSubTitles: {
-      subTitle_1: "Summary menu",
-      subTitle_2: "Summary menu",
+      subTitle_1: {
+        id: uuidv4(),
+        menuItem: "Summary 1",
+        menuItemIsClicked: true,
+      },
+      subTitle_2: {
+        id: uuidv4(),
+        menuItem: "Summary 2",
+        menuItemIsClicked: false,
+      },
     },
     isClicked: false,
   },
@@ -65,8 +81,16 @@ export const accordionData = [
     id: 2,
     menuTitle: "PUBLISH",
     menuSubTitles: {
-      subTitle_1: "Compose",
-      subTitle_2: "Feed",
+      subTitle_1: {
+        id: uuidv4(),
+        menuItem: "Compose",
+        menuItemIsClicked: true,
+      },
+      subTitle_2: {
+        id: uuidv4(),
+        menuItem: "Feed",
+        menuItemIsClicked: false,
+      },
     },
     isClicked: true,
   },
@@ -74,8 +98,16 @@ export const accordionData = [
     id: 3,
     menuTitle: "ENGAGE",
     menuSubTitles: {
-      subTitle_1: "Engage menu",
-      subTitle_2: "Engage menu",
+      subTitle_1: {
+        id: uuidv4(),
+        menuItem: "Engage 1",
+        menuItemIsClicked: true,
+      },
+      subTitle_2: {
+        id: uuidv4(),
+        menuItem: "Engage 2",
+        menuItemIsClicked: false,
+      },
     },
     isClicked: false,
   },
@@ -83,8 +115,16 @@ export const accordionData = [
     id: 4,
     menuTitle: "LISTEN",
     menuSubTitles: {
-      subTitle_1: "Listen menu",
-      subTitle_2: "Listen menu",
+      subTitle_1: {
+        id: uuidv4(),
+        menuItem: "Listen 1",
+        menuItemIsClicked: true,
+      },
+      subTitle_2: {
+        id: uuidv4(),
+        menuItem: "Listen 2",
+        menuItemIsClicked: false,
+      },
     },
     isClicked: false,
   },
@@ -92,14 +132,34 @@ export const accordionData = [
     id: 5,
     menuTitle: "REPORT",
     menuSubTitles: {
-      subTitle_1: "Report menu",
-      subTitle_2: "Report menu",
+      subTitle_1: {
+        id: uuidv4(),
+        menuItem: "Report 1",
+        menuItemIsClicked: false,
+      },
+      subTitle_2: {
+        id: uuidv4(),
+        menuItem: "Report 2",
+        menuItemIsClicked: true,
+      },
     },
     isClicked: false,
   },
 ];
+/*
+UNUSED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-//STATUS COLORS
+export const extractedFromAccordionData = [];
+
+for (const [key, value] of Object.entries(
+  accordionData.map((item) => item.menuSubTitles)
+)) {
+  extractedFromAccordionData.push({ mainId: key, subMenuData: value });
+}
+console.log(extractedFromAccordionData);
+*/
+
+//STATUS COLORS:
 export const statusColorsData = [
   { id: 0, color: "gray", statusMessage: "Published" },
   { id: 1, color: "green", statusMessage: "Scheduled" },
@@ -117,6 +177,7 @@ allData.map((item) => {
   return item.map((data) => {
     const dateSliced = data.published_at.split(" ")[0];
     return postsData.push({
+      id: uuidv4(),
       date: dateSliced,
       status: data.status,
       channel: data.account.channel,
@@ -127,7 +188,7 @@ allData.map((item) => {
     });
   });
 });
-
+/*
 export const postsStatus = [];
 export const postsSortedByStatus = datesOfPostPublication.map((date) => {
   postsData
@@ -151,4 +212,4 @@ export const postsSortedByContent = datesOfPostPublication.map((date) => {
     .filter((post) => post.date === date)
     .map((item) => postsContent.push([item.message, item.image]));
   return postsContent;
-});
+});*/
