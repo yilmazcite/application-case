@@ -1,11 +1,12 @@
 import React from "react";
 
 import { useSelector, useDispatch } from "react-redux";
+import { accordionActions } from "../../store/accordion-slice";
 import { brandSwitchActions } from "../../store/brand-switch-slice";
 
 const Brands = () => {
-  const dispatch = useDispatch();
   const initialBrandState = useSelector((state) => state.brandSwitchSlice);
+  const dispatch = useDispatch();
 
   const clickHandler = (id) => {
     dispatch(brandSwitchActions.selectBrand(id));
@@ -13,7 +14,11 @@ const Brands = () => {
   };
 
   const renderBrandsBar = initialBrandState.map((brand) => {
+    const notifications = brand.notifications;
     const isClicked = brand.isClicked;
+    if (brand.isClicked) {
+      dispatch(accordionActions.updateNotifications(notifications));
+    }
     return (
       <h3
         className={isClicked ? "SET-CONDITIONAL-CLASS" : ""}
@@ -22,6 +27,7 @@ const Brands = () => {
         onClick={() => clickHandler(brand.id)}
       >
         {brand.name}
+        {notifications && !isClicked && notifications}
       </h3>
     );
   });

@@ -10,7 +10,6 @@ const selectMenuItem = (state, action) => {
       .filter((item) => item.id !== action.payload)
       .map((id) => id.id)
       .map((id) => (state[id].isClicked = false));
-    //disable the notification item
     return;
   }
   if (state[action.payload].isClicked === true) {
@@ -22,7 +21,6 @@ const selectMenuItem = (state, action) => {
 
 const updateMenuItems = (state, action) => {
   if (action.payload === 0) {
-    //disable the notification item
     return;
   }
 
@@ -32,12 +30,42 @@ const updateMenuItems = (state, action) => {
     .map((id) => (state[id].isClicked = false));
 };
 
+const updateSubMenuItems = (state, action) => {
+  const mainId = action.payload.mainId;
+  const subId = action.payload.subId;
+
+  /*if (item.id === subId && item.menuItemIsClicked === false) {
+      item.menuItemIsClicked = true;
+      console.log(item.menuItemIsClicked, item.menuItem);
+    }
+    if (item.id !== subId && item.menuItemIsClicked === true) {
+      item.menuItemIsClicked = false;
+      console.log(item.menuItemIsClicked, item.menuItem);
+    }*/
+
+  //BELOW IS THE TERNARY VERSION OF THE IF BLOCKS ABOVE:
+  state[mainId].menuSubTitles.map((item) => {
+    return item.id === subId && item.menuItemIsClicked === false
+      ? (item.menuItemIsClicked = true)
+      : item.id !== subId && item.menuItemIsClicked === true
+      ? (item.menuItemIsClicked = false)
+      : undefined;
+  });
+};
+
+const updateNotifications = (state, action) => {
+  state[0].notifications = action.payload;
+  state[0].menuTitle = `NOTIFICATIONS ${state[0].notifications}`;
+};
+
 const accordionSlice = createSlice({
   name: "accordion-slice",
   initialState: initialAccordionState,
   reducers: {
     selectMenuItem,
     updateMenuItems,
+    updateSubMenuItems,
+    updateNotifications,
   },
 });
 

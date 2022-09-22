@@ -11,22 +11,35 @@ const AccordionMenu = () => {
     dispatch(accordionActions.updateMenuItems(id));
   };
 
+  const menuItemClickHandler = (mainId, subId) => {
+    dispatch(accordionActions.updateSubMenuItems({ mainId, subId }));
+  };
+
   const renderAccordionMenu = initialAccordionState.map((menuItem) => {
+    const menuNotificaton = initialAccordionState[0].notifications;
+    //use menuNotification for styling
     const isClicked = menuItem.isClicked;
-    const menuItem_1 = menuItem.menuSubTitles.subTitle_1;
-    const menuItem_2 = menuItem.menuSubTitles.subTitle_2;
+
+    const renderMenuSubItems = menuItem.menuSubTitles.map((subItem) => {
+      const subMenuIsClicked = subItem.menuItemIsClicked;
+      //const style = subMenuIsClicked ? {...style} : undefined;
+      return (
+        <li
+          //style={style}
+          key={subItem.id}
+          onClick={() => menuItemClickHandler(menuItem.id, subItem.id)}
+        >
+          {subItem.menuItem}
+        </li>
+      );
+    });
 
     return (
       <div key={menuItem.id}>
         <h3 onClick={() => clickHandler(menuItem.id)} id={menuItem.id}>
           {menuItem.menuTitle}
         </h3>
-        {isClicked && (
-          <ul>
-            <li>{menuItem_1.menuItem}</li>
-            <li>{menuItem_2.menuItem}</li>
-          </ul>
-        )}
+        {isClicked && <ul>{renderMenuSubItems}</ul>}
       </div>
     );
   });

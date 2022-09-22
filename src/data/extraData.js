@@ -6,38 +6,43 @@ import { v4 as uuidv4 } from "uuid";
 export const brandData = [
   {
     id: 0,
-    name: "NAME 0",
+    name: "NAME 0 - Notifications: ",
     isClicked: false,
     src: "",
     alt: "",
+    notifications: 13,
   },
   {
     id: 1,
-    name: "NAME 1",
+    name: "NAME 1 - Notifications: ",
     isClicked: false,
     src: "",
     alt: "",
+    notifications: 99,
   },
   {
     id: 2,
-    name: "NAME 2",
+    name: "NAME 2 - Notifications: ",
     isClicked: false,
     src: "",
     alt: "",
+    notifications: 41,
   },
   {
     id: 3,
-    name: "NAME 3",
+    name: "NAME 3 - Notifications: ",
     isClicked: true,
     src: "",
     alt: "",
+    notifications: 29,
   },
   {
     id: 4,
-    name: "NAME 4",
+    name: "NAME 4 - Notifications: ",
     isClicked: false,
     src: "",
     alt: "",
+    notifications: 82,
   },
 ];
 
@@ -46,126 +51,107 @@ export const accordionData = [
   {
     id: 0,
     menuTitle: "NOTIFICATIONS",
-    menuSubTitles: {
-      subTitle_1: {
+    menuSubTitles: [
+      {
         id: uuidv4(),
         menuItem: "",
         menuItemIsClicked: true,
       },
-      subTitle_2: {
+      {
         id: uuidv4(),
         menuItem: "",
         menuItemIsClicked: false,
       },
-    },
+    ],
     isClicked: false,
+    notifications: 0,
   },
   {
     id: 1,
     menuTitle: "SUMMARY",
-    menuSubTitles: {
-      subTitle_1: {
-        id: uuidv4(),
-        menuItem: "Summary 1",
-        menuItemIsClicked: true,
-      },
-      subTitle_2: {
-        id: uuidv4(),
-        menuItem: "Summary 2",
-        menuItemIsClicked: false,
-      },
-    },
+    menuSubTitles: [
+      { id: uuidv4(), menuItem: "Summary 1", menuItemIsClicked: true },
+      { id: uuidv4(), menuItem: "Summary 2", menuItemIsClicked: false },
+    ],
     isClicked: false,
   },
   {
     id: 2,
     menuTitle: "PUBLISH",
-    menuSubTitles: {
-      subTitle_1: {
+    menuSubTitles: [
+      {
         id: uuidv4(),
         menuItem: "Compose",
         menuItemIsClicked: true,
       },
-      subTitle_2: {
+      {
         id: uuidv4(),
         menuItem: "Feed",
         menuItemIsClicked: false,
       },
-    },
+    ],
     isClicked: true,
   },
   {
     id: 3,
     menuTitle: "ENGAGE",
-    menuSubTitles: {
-      subTitle_1: {
+    menuSubTitles: [
+      {
         id: uuidv4(),
         menuItem: "Engage 1",
         menuItemIsClicked: true,
       },
-      subTitle_2: {
+      {
         id: uuidv4(),
         menuItem: "Engage 2",
         menuItemIsClicked: false,
       },
-    },
+    ],
     isClicked: false,
   },
   {
     id: 4,
     menuTitle: "LISTEN",
-    menuSubTitles: {
-      subTitle_1: {
+    menuSubTitles: [
+      {
         id: uuidv4(),
         menuItem: "Listen 1",
         menuItemIsClicked: true,
       },
-      subTitle_2: {
+      {
         id: uuidv4(),
         menuItem: "Listen 2",
         menuItemIsClicked: false,
       },
-    },
+    ],
     isClicked: false,
   },
   {
     id: 5,
     menuTitle: "REPORT",
-    menuSubTitles: {
-      subTitle_1: {
+    menuSubTitles: [
+      {
         id: uuidv4(),
         menuItem: "Report 1",
         menuItemIsClicked: false,
       },
-      subTitle_2: {
+      {
         id: uuidv4(),
         menuItem: "Report 2",
         menuItemIsClicked: true,
       },
-    },
+    ],
     isClicked: false,
   },
 ];
-/*
-UNUSED!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
-export const extractedFromAccordionData = [];
-
-for (const [key, value] of Object.entries(
-  accordionData.map((item) => item.menuSubTitles)
-)) {
-  extractedFromAccordionData.push({ mainId: key, subMenuData: value });
-}
-console.log(extractedFromAccordionData);
-*/
 
 //STATUS COLORS:
 export const statusColorsData = [
-  { id: 0, color: "gray", statusMessage: "Published" },
-  { id: 1, color: "green", statusMessage: "Scheduled" },
-  { id: 2, color: "yellow", statusMessage: "Need Approval" },
-  { id: 3, color: "red", statusMessage: "Error" },
-  { id: 4, color: "blue", statusMessage: "Notes" },
+  { id: 1, color: "gray", statusMessage: "Published" },
+  { id: 2, color: "green", statusMessage: "Scheduled" },
+  { id: 3, color: "yellow", statusMessage: "Need Approval" },
+  { id: 4, color: "red", statusMessage: "Error" },
+  { id: 5, color: "blue", statusMessage: "Notes" },
 ];
 
 //POSTS DATA:
