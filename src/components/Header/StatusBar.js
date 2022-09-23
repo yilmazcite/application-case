@@ -1,16 +1,17 @@
 import React from "react";
+import BulletPoint from "./BulletPoint";
 import { statusColorsData } from "../../data/extraData";
 import userProfilePicture from "../../assets/user-profile-picture/user-profile-picture.png";
 
 const StatusBar = () => {
   const renderStatusInfo = statusColorsData.map((status) => {
     return (
-      <ul key={status.id}>
+      <div key={status.id}>
         <li>
-          <span>{status.color}</span>
+          <BulletPoint color={status.color} />
           <span>{status.statusMessage}</span>
         </li>
-      </ul>
+      </div>
     );
   });
 

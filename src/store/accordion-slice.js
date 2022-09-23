@@ -34,16 +34,6 @@ const updateSubMenuItems = (state, action) => {
   const mainId = action.payload.mainId;
   const subId = action.payload.subId;
 
-  /*if (item.id === subId && item.menuItemIsClicked === false) {
-      item.menuItemIsClicked = true;
-      console.log(item.menuItemIsClicked, item.menuItem);
-    }
-    if (item.id !== subId && item.menuItemIsClicked === true) {
-      item.menuItemIsClicked = false;
-      console.log(item.menuItemIsClicked, item.menuItem);
-    }*/
-
-  //BELOW IS THE TERNARY VERSION OF THE IF BLOCKS ABOVE:
   state[mainId].menuSubTitles.map((item) => {
     return item.id === subId && item.menuItemIsClicked === false
       ? (item.menuItemIsClicked = true)
