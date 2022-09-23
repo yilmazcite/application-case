@@ -10,7 +10,7 @@ const Sidebar = () => {
       <div>
         <img src={socialityBrand} alt="sociality.io" />
       </div>
-      <div>
+      <div className="deneme4">
         <Brands />
         <AccordionMenu />
       </div>

@@ -1,15 +1,18 @@
 import Sidebar from "./components/Sidebar/Sidebar";
 import StatusBar from "./components/Header/StatusBar";
 import Post from "./components/Post/Post";
+import "./index.css";
 
 function App() {
   return (
     <div>
       <div>
-        <StatusBar />
         <Sidebar />
+        <StatusBar />
       </div>
-      <Post />
+      <div>
+        <Post />
+      </div>
     </div>
   );
 }
