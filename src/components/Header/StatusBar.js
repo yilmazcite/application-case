@@ -1,5 +1,6 @@
 import React from "react";
 import { statusColorsData } from "../../data/extraData";
+import userProfilePicture from "../../assets/user-profile-picture/user-profile-picture.png";
 
 const StatusBar = () => {
   const renderStatusInfo = statusColorsData.map((status) => {
@@ -15,10 +16,9 @@ const StatusBar = () => {
 
   return (
     <div>
-      <h3>{renderStatusInfo}</h3>
+      <h5>{renderStatusInfo}</h5>
       <div>
-        <img alt="img-taken-from-assets" />
-        <p>Image</p>
+        <img src={userProfilePicture} alt="user profile picture" />
       </div>
     </div>
   );

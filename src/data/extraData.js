@@ -1,48 +1,57 @@
 //ALL THE EXTRA DATA TO BE USED:
 import jsonData from "../data/data.json";
+import brandLogo_0 from "../assets/brands/brand-logo-0.jpg";
+import brandLogo_1 from "../assets/brands/brand-logo-1.jpg";
+import brandLogo_2 from "../assets/brands/brand-logo-2.jpg";
+import brandLogo_3 from "../assets/brands/brand-logo-3.jpg";
+import brandLogo_4 from "../assets/brands/brand-logo-4.jpg";
+import brandLogo_5 from "../assets/brands/brand-logo-5.jpg";
+
 import { v4 as uuidv4 } from "uuid";
 
 //BRAND SWITCHING TAB:
 export const brandData = [
   {
     id: 0,
-    name: "NAME 0 - Notifications: ",
     isClicked: false,
-    src: "",
-    alt: "",
+    src: brandLogo_0,
+    alt: "brand 1 logo",
     notifications: 13,
   },
   {
     id: 1,
-    name: "NAME 1 - Notifications: ",
     isClicked: false,
-    src: "",
-    alt: "",
+    src: brandLogo_1,
+    alt: "brand 2 logo",
     notifications: 99,
   },
   {
     id: 2,
-    name: "NAME 2 - Notifications: ",
     isClicked: false,
-    src: "",
-    alt: "",
+    src: brandLogo_2,
+    alt: "brand 3 logo",
     notifications: 41,
   },
   {
     id: 3,
-    name: "NAME 3 - Notifications: ",
     isClicked: true,
-    src: "",
-    alt: "",
+    src: brandLogo_3,
+    alt: "brand 4 logo",
     notifications: 29,
   },
   {
     id: 4,
-    name: "NAME 4 - Notifications: ",
     isClicked: false,
-    src: "",
-    alt: "",
+    src: brandLogo_4,
+    alt: "brand 5 logo",
     notifications: 82,
+  },
+  {
+    id: 5,
+    isClicked: false,
+    src: brandLogo_5,
+    alt: "brand 6 logo",
+    notifications: 33,
   },
 ];
 
@@ -147,11 +156,11 @@ export const accordionData = [
 
 //STATUS COLORS:
 export const statusColorsData = [
-  { id: 1, color: "gray", statusMessage: "Published" },
-  { id: 2, color: "green", statusMessage: "Scheduled" },
-  { id: 3, color: "yellow", statusMessage: "Need Approval" },
-  { id: 4, color: "red", statusMessage: "Error" },
-  { id: 5, color: "blue", statusMessage: "Notes" },
+  { id: 0, color: "#f7bf38", statusMessage: "Need Approval" },
+  { id: 1, color: "#3ac183", statusMessage: "Scheduled" },
+  { id: 2, color: "#67b1f2", statusMessage: "Publishing" },
+  { id: 3, color: "#acacac", statusMessage: "Published" },
+  { id: 4, color: "#fb6450", statusMessage: "Error" },
 ];
 
 //POSTS DATA:
@@ -174,28 +183,19 @@ allData.map((item) => {
     });
   });
 });
-/*
-export const postsStatus = [];
-export const postsSortedByStatus = datesOfPostPublication.map((date) => {
-  postsData
-    .filter((post) => post.date === date)
-    .map((item) => postsStatus.push([item.status, item.link, item.channel]));
-  return postsStatus;
-});
 
-export const postsHeaderContent = [];
-export const postsSortedByHeaderContent = datesOfPostPublication.map((date) => {
-  postsData
-    .filter((post) => post.date === date)
-    .map((item) => postsHeaderContent.push([item.date]));
-  return postsHeaderContent;
-});
-
-export const postsContent = [];
-export const postsSortedByContent = datesOfPostPublication.map((date) => {
-  postsContent.push(date);
-  postsData
-    .filter((post) => post.date === date)
-    .map((item) => postsContent.push([item.message, item.image]));
-  return postsContent;
-});*/
+//DATE FORMATTING:
+export const months = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];

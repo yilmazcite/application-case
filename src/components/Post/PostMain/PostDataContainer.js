@@ -21,13 +21,20 @@ const PostDataContainer = ({ postData }) => {
     />
   );
 
+  const postFooter = (
+    <PostFooter
+      postChannel={postData.channel}
+      postPublished={postData.isPublished}
+    />
+  );
+
   return (
     <div>
       <div>{postStatus}</div>
       <div>
         {postHeader}
         {postContent}
-        <PostFooter />
+        {postFooter}
       </div>
     </div>
   );

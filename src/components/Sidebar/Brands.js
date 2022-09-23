@@ -14,21 +14,23 @@ const Brands = () => {
   };
 
   const renderBrandsBar = initialBrandState.map((brand) => {
+    const brandImage = brand.src;
+    const imgAlt = brand.alt;
     const notifications = brand.notifications;
     const isClicked = brand.isClicked;
     if (brand.isClicked) {
       dispatch(accordionActions.updateNotifications(notifications));
     }
     return (
-      <h3
+      <div
         className={isClicked ? "SET-CONDITIONAL-CLASS" : ""}
         key={brand.id}
         id={brand.id}
         onClick={() => clickHandler(brand.id)}
       >
-        {brand.name}
+        <img src={brandImage} alt={imgAlt} />
         {notifications && !isClicked && notifications}
-      </h3>
+      </div>
     );
   });
 

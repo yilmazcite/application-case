@@ -1,12 +1,23 @@
 import React, { useState } from "react";
+import noPostImage from "../../../assets/no-post-image/no-post-image.png";
 
 const PostContent = ({ postMessage, postImage }) => {
   const [loadImage, setLoadImage] = useState(true);
-  //import the default image from the assets and assign it to the second condition's src.
+
+  const index = postMessage.indexOf("http");
+  const url = index !== -1 ? postMessage.slice(index) : undefined;
+  const finalPostMessage = (
+    <p>
+      {postMessage.slice(0, index)}
+      <a href={url} target="blank">
+        {url}
+      </a>
+    </p>
+  );
 
   return (
     <div>
-      <p>{postMessage}</p>
+      {finalPostMessage}
       {loadImage ? (
         <img
           onError={() => setLoadImage(false)}
@@ -14,7 +25,7 @@ const PostContent = ({ postMessage, postImage }) => {
           alt="post visual"
         />
       ) : (
-        <img src={postImage} alt="default image" />
+        <img src={noPostImage} alt="default visual" />
       )}
     </div>
   );

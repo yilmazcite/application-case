@@ -36,9 +36,9 @@ const AccordionMenu = () => {
 
     return (
       <div key={menuItem.id}>
-        <h3 onClick={() => clickHandler(menuItem.id)} id={menuItem.id}>
+        <h4 onClick={() => clickHandler(menuItem.id)} id={menuItem.id}>
           {menuItem.menuTitle}
-        </h3>
+        </h4>
         {isClicked && <ul>{renderMenuSubItems}</ul>}
       </div>
     );

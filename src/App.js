@@ -5,8 +5,10 @@ import Post from "./components/Post/Post";
 function App() {
   return (
     <div>
-      <StatusBar />
-      <Sidebar />
+      <div>
+        <StatusBar />
+        <Sidebar />
+      </div>
       <Post />
     </div>
   );
