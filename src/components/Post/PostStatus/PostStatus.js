@@ -12,15 +12,11 @@ const PostStatus = ({ postStatus, postChannel, postLink }) => {
       <FaInstagram color="#fff" />
     ) : undefined;
 
-  const postStatusColor = statusColorsData[postStatus].color;
-
-  //temporary basic styling:
-  const style = {
-    backgroundColor: postStatusColor,
-  };
-
   return (
-    <div style={style}>
+    <div
+      style={{ backgroundColor: statusColorsData[postStatus].color }}
+      className="h-full flex items-center px-1 rounded-l-xl"
+    >
       <a href={postLink}>{socialMediaIcon}</a>
     </div>
   );

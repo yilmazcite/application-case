@@ -2,6 +2,7 @@ import React from "react";
 import PostDataContainer from "./PostMain/PostDataContainer";
 import { postsData, datesOfPostPublication } from "../../data/extraData";
 import { months } from "../../data/extraData";
+import StatusBar from "../Header/StatusBar";
 
 const Post = () => {
   const renderPosts = datesOfPostPublication.reverse().map((date, i) => {
@@ -11,9 +12,11 @@ const Post = () => {
     const newDate = `${dateSplit[2]} ${month} ${dateSplit[0]}`;
 
     return (
+      //div BEFORE: className="w-3/4"
+      //className="w-[15rem] h-[20]"
       <div key={i}>
         <h1>{newDate}</h1>
-        <div>
+        <div className="flex flex-wrap">
           {postsData.map((post) => {
             if (post.date === date) {
               return <PostDataContainer key={post.id} postData={post} />;
@@ -24,7 +27,12 @@ const Post = () => {
     );
   });
 
-  return <>{renderPosts}</>;
+  return (
+    <div className="flex flex-col w-full">
+      <StatusBar />
+      <div>{renderPosts}</div>
+    </div>
+  );
 };
 
 export default Post;

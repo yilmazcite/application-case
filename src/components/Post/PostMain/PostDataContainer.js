@@ -10,7 +10,11 @@ const PostDataContainer = ({ postData }) => {
   );
 
   const postHeader = (
-    <PostHeader postDate={postData.date} postPublished={postData.isPublished} />
+    <PostHeader
+      postDate={postData.date}
+      postDateHour={postData.dateHour}
+      postPublished={postData.isPublished}
+    />
   );
 
   const postStatus = (
@@ -29,7 +33,8 @@ const PostDataContainer = ({ postData }) => {
   );
 
   return (
-    <div>
+    // w-fit BEFORE
+    <div className="flex border rounded-xl mb-3 mx-3 w-[20rem] h-[30rem]">
       <div>{postStatus}</div>
       <div>
         {postHeader}

@@ -7,19 +7,23 @@ const StatusBar = () => {
   const renderStatusInfo = statusColorsData.map((status) => {
     return (
       <div key={status.id}>
-        <li>
+        <li className="flex flex-row items-center">
           <BulletPoint color={status.color} />
-          <span>{status.statusMessage}</span>
+          <span className="px-2">{status.statusMessage}</span>
         </li>
       </div>
     );
   });
 
   return (
-    <div>
-      <h5>{renderStatusInfo}</h5>
+    <div className="flex flex-row justify-between mt-8 mx-5">
+      <h5 className="flex flex-row">{renderStatusInfo}</h5>
       <div>
-        <img src={userProfilePicture} alt="user profile picture" />
+        <img
+          src={userProfilePicture}
+          alt="user profile picture"
+          className="mr-16"
+        />
       </div>
     </div>
   );

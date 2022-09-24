@@ -1,5 +1,6 @@
 //ALL THE EXTRA DATA TO BE USED:
 import jsonData from "../data/data.json";
+
 import brandLogo_0 from "../assets/brands/brand-logo-0.jpg";
 import brandLogo_1 from "../assets/brands/brand-logo-1.jpg";
 import brandLogo_2 from "../assets/brands/brand-logo-2.jpg";
@@ -142,12 +143,12 @@ export const accordionData = [
       {
         id: uuidv4(),
         menuItem: "Report 1",
-        menuItemIsClicked: false,
+        menuItemIsClicked: true,
       },
       {
         id: uuidv4(),
         menuItem: "Report 2",
-        menuItemIsClicked: true,
+        menuItemIsClicked: false,
       },
     ],
     isClicked: false,
@@ -171,9 +172,11 @@ export const postsData = [];
 allData.map((item) => {
   return item.map((data) => {
     const dateSliced = data.published_at.split(" ")[0];
+    const publishedHour = data.published_at.split(" ")[1].slice(0, -3);
     return postsData.push({
       id: uuidv4(),
       date: dateSliced,
+      dateHour: publishedHour,
       status: data.status,
       channel: data.account.channel,
       message: data.entry.message,

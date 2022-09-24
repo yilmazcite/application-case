@@ -23,13 +23,13 @@ const Brands = () => {
     }
     return (
       <div
-        className={isClicked ? "SET-CONDITIONAL-CLASS" : ""}
+        className={isClicked ? "opacity-100" : "opacity-50"}
         key={brand.id}
         id={brand.id}
         onClick={() => clickHandler(brand.id)}
       >
-        <img src={brandImage} alt={imgAlt} />
-        {notifications && !isClicked && notifications}
+        <img className="w-[5rem]" src={brandImage} alt={imgAlt} />
+        <span>{notifications && !isClicked && notifications}</span>
       </div>
     );
   });

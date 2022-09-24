@@ -7,7 +7,7 @@ const PostContent = ({ postMessage, postImage }) => {
   const index = postMessage.indexOf("http");
   const url = index !== -1 ? postMessage.slice(index) : undefined;
   const finalPostMessage = (
-    <p>
+    <p className="break-words">
       {postMessage.slice(0, index)}
       <a href={url} target="blank">
         {url}

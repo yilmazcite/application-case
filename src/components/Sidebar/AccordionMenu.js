@@ -23,8 +23,6 @@ const AccordionMenu = () => {
   };
 
   const renderAccordionMenu = initialAccordionState.map((menuItem) => {
-    const menuNotificaton = initialAccordionState[0].notifications;
-    //use menuNotification for styling
     const isClicked = menuItem.isClicked;
 
     const toggleIcon = menuItem.menuTitle.includes(
@@ -51,10 +49,13 @@ const AccordionMenu = () => {
 
     const renderMenuSubItems = menuItem.menuSubTitles.map((subItem) => {
       const subMenuIsClicked = subItem.menuItemIsClicked;
-      //const style = subMenuIsClicked ? {...style} : undefined;
       return (
         <li
-          //style={style}
+          className={
+            subMenuIsClicked
+              ? "text-accordionMenuItem list-disc list-inside"
+              : "text-[#f8fafc] list-disc list-inside"
+          }
           key={subItem.id}
           onClick={() => menuItemClickHandler(menuItem.id, subItem.id)}
         >
@@ -65,15 +66,36 @@ const AccordionMenu = () => {
 
     return (
       <div key={menuItem.id}>
-        <h4 onClick={() => clickHandler(menuItem.id)} id={menuItem.id}>
-          {menuItemIcon} {menuItem.menuTitle} {toggleIcon}
+        <h4
+          onClick={() => clickHandler(menuItem.id)}
+          id={menuItem.id}
+          className={
+            isClicked
+              ? "bg-accordionMenuItem text-[#f8fafc] flex justify-between"
+              : "bg-accordionBgDefault text-[#f8fafc] flex justify-between"
+          }
+        >
+          <span className="flex items-center">
+            {menuItemIcon} {menuItem.menuTitle}
+          </span>
+          <span
+            className={
+              isClicked ? "text-accordionBgDefault mr-2" : "text-[#f8fafc] mr-2"
+            }
+          >
+            {toggleIcon}
+          </span>
         </h4>
-        {isClicked && <ul>{renderMenuSubItems}</ul>}
+        {isClicked && (
+          <ul className="bg-accordionSelectedBg ml-3">{renderMenuSubItems}</ul>
+        )}
       </div>
     );
   });
 
-  return <div>{renderAccordionMenu}</div>;
+  return (
+    <div className="bg-accordionBgDefault w-[13rem]">{renderAccordionMenu}</div>
+  );
 };
 
 export default AccordionMenu;

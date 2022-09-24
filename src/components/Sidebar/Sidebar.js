@@ -10,9 +10,13 @@ const Sidebar = () => {
       <div>
         <img src={socialityBrand} alt="sociality.io" />
       </div>
-      <div className="deneme4">
-        <Brands />
-        <AccordionMenu />
+      <div className="flex">
+        <span>
+          <Brands />
+        </span>
+        <span>
+          <AccordionMenu />
+        </span>
       </div>
     </section>
   );
