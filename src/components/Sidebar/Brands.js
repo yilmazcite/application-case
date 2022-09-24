@@ -24,14 +24,14 @@ const Brands = () => {
 
     //styles
     const brandClickedStyle = isClicked
-      ? "opacity-100 w-[6.6rem] h-[2.7rem] rounded-lg border-xl cursor-pointer"
-      : "opacity-50 w-[6.6rem] h-[2.7rem] rounded-lg border-xl cursor-pointer";
+      ? "opacity-100 w-[6.8rem] h-[2.4rem] rounded-lg border-xl cursor-pointer"
+      : "opacity-50 w-[6.8rem] h-[2.4rem] rounded-lg border-xl cursor-pointer";
     const notificationStyle =
-      "absolute top-[-0.50rem] right-[-0.45rem] px-1 bg-brandsNotificationBg  rounded-full text-sm text-brandsBg cursor-default";
+      "absolute top-[-0.50rem] right-[-0.45rem] px-1 bg-brandsNotificationBg rounded-full text-sm text-brandsBg cursor-default";
 
     return (
       <div key={brand.id} id={brand.id} onClick={() => clickHandler(brand.id)}>
-        <div className="relative my-[1rem] mx-3 p-[0.2rem] rounded-lg bg-brandsBg">
+        <div className="relative my-[1rem] mx-[0.75rem] mb-[1.3rem] p-[0.2rem] rounded-lg bg-brandsBg">
           <img className={brandClickedStyle} src={brandImage} alt={imgAlt} />
           <p className={notificationStyle}>
             {notifications && !isClicked && notifications}
@@ -41,7 +41,7 @@ const Brands = () => {
     );
   });
 
-  return <>{renderBrandsBar}</>;
+  return <div className="mt-[1.3rem]">{renderBrandsBar}</div>;
 };
 
 export default Brands;

@@ -8,6 +8,7 @@ module.exports = {
       accordionBgDefault: "#393d42",
       accordionSelectedBg: "#33373B",
       brandsBgDefault: "#2a2f33",
+      socialityBrandBg: "#31363b",
       brandsNotificationBg: "#3ac1a9",
       brandsBg: "#fff",
       toggleIcon: "#000",

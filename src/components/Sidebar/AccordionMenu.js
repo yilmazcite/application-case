@@ -65,7 +65,7 @@ const AccordionMenu = () => {
     });
 
     return (
-      <div key={menuItem.id} className="">
+      <div key={menuItem.id} className="my-3">
         <h4
           onClick={() => clickHandler(menuItem.id)}
           id={menuItem.id}
@@ -87,7 +87,7 @@ const AccordionMenu = () => {
             </span>
             <span className="py-[13px]">{menuItem.menuTitle}</span>
           </span>
-          <span className="flex items-center text-toggleIcon text-lg mr-2">
+          <span className="flex items-center text-toggleIcon text-lg mr-4">
             {toggleIcon}
           </span>
         </h4>

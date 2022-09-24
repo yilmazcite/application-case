@@ -7,10 +7,10 @@ import socialityBrand from "../../assets/brands/sociality-brand/sociality-brand.
 const Sidebar = () => {
   return (
     <section>
-      <div className="flex justify-center bg-accordionBgDefault">
+      <div className="flex justify-center bg-socialityBrandBg cursor-pointer">
         <img src={socialityBrand} alt="sociality.io" />
       </div>
-      <div className="flex">
+      <div className="flex min-h-screen h-full">
         <span className="bg-brandsBgDefault">
           <Brands />
         </span>
