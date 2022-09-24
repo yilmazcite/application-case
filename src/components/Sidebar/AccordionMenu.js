@@ -53,8 +53,8 @@ const AccordionMenu = () => {
         <li
           className={
             subMenuIsClicked
-              ? "text-accordionMenuItem list-disc list-inside"
-              : "text-[#f8fafc] list-disc list-inside"
+              ? "text-accordionMenuItem list-disc list-inside my-2 ml-4 pb-3 cursor-pointer"
+              : "text-[#f8fafc] list-disc list-inside my-2 ml-4 pb-3 cursor-pointer"
           }
           key={subItem.id}
           onClick={() => menuItemClickHandler(menuItem.id, subItem.id)}
@@ -65,29 +65,34 @@ const AccordionMenu = () => {
     });
 
     return (
-      <div key={menuItem.id}>
+      <div key={menuItem.id} className="">
         <h4
           onClick={() => clickHandler(menuItem.id)}
           id={menuItem.id}
           className={
             isClicked
-              ? "bg-accordionMenuItem text-[#f8fafc] flex justify-between"
-              : "bg-accordionBgDefault text-[#f8fafc] flex justify-between"
+              ? "flex justify-between cursor-pointer bg-accordionMenuItem text-[#f8fafc]"
+              : "flex justify-between cursor-pointer bg-accordionBgDefault text-[#f8fafc]"
           }
         >
-          <span className="flex items-center">
-            {menuItemIcon} {menuItem.menuTitle}
+          <span className="flex items-center text-lg">
+            <span
+              className={
+                isClicked
+                  ? "text-brandsBg mx-[0.6rem] text-xl"
+                  : "text-accordionMenuItem mx-[0.6rem] text-xl"
+              }
+            >
+              {menuItemIcon}
+            </span>
+            <span className="py-[13px]">{menuItem.menuTitle}</span>
           </span>
-          <span
-            className={
-              isClicked ? "text-accordionBgDefault mr-2" : "text-[#f8fafc] mr-2"
-            }
-          >
+          <span className="flex items-center text-toggleIcon text-lg mr-2">
             {toggleIcon}
           </span>
         </h4>
         {isClicked && (
-          <ul className="bg-accordionSelectedBg ml-3">{renderMenuSubItems}</ul>
+          <ul className="bg-accordionSelectedBg py-4">{renderMenuSubItems}</ul>
         )}
       </div>
     );
