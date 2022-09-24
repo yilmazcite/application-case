@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { accordionActions } from "../../store/accordion-slice";
-import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
+import { AiOutlinePlus, AiOutlineMinus, AiFillCaretDown } from "react-icons/ai";
 
 import { MdNotificationsActive, MdOutlineReportProblem } from "react-icons/md";
 import { TbHeartRateMonitor } from "react-icons/tb";
@@ -25,27 +25,39 @@ const AccordionMenu = () => {
   const renderAccordionMenu = initialAccordionState.map((menuItem) => {
     const isClicked = menuItem.isClicked;
 
-    const toggleIcon = menuItem.menuTitle.includes(
-      "NOTIFICATIONS"
-    ) ? null : isClicked ? (
-      <AiOutlineMinus />
-    ) : (
-      <AiOutlinePlus />
-    );
+    const toggleIcon =
+      menuItem.menuTitle === "NOTIFICATIONS" ? null : isClicked ? (
+        <AiOutlineMinus />
+      ) : (
+        <AiOutlinePlus />
+      );
 
-    const menuItemIcon = menuItem.menuTitle.includes("NOTIFICATIONS") ? (
-      <MdNotificationsActive />
-    ) : menuItem.menuTitle === "SUMMARY" ? (
-      <TbHeartRateMonitor />
-    ) : menuItem.menuTitle === "PUBLISH" ? (
-      <BsPencilSquare />
-    ) : menuItem.menuTitle === "ENGAGE" ? (
-      <FaRegComments />
-    ) : menuItem.menuTitle === "LISTEN" ? (
-      <GiSoundWaves />
-    ) : (
-      <MdOutlineReportProblem />
-    );
+    const menuItemIcon =
+      menuItem.menuTitle === "NOTIFICATIONS" ? (
+        <MdNotificationsActive />
+      ) : menuItem.menuTitle === "SUMMARY" ? (
+        <TbHeartRateMonitor />
+      ) : menuItem.menuTitle === "PUBLISH" ? (
+        <BsPencilSquare />
+      ) : menuItem.menuTitle === "ENGAGE" ? (
+        <FaRegComments />
+      ) : menuItem.menuTitle === "LISTEN" ? (
+        <GiSoundWaves />
+      ) : (
+        <MdOutlineReportProblem />
+      );
+
+    const renderMenuItems =
+      menuItem.menuTitle === "NOTIFICATIONS" ? (
+        <span>
+          {menuItem.menuTitle}
+          <span className="border border-[#3ac183] px-2 rounded-md ml-2">
+            {menuItem.notifications}
+          </span>
+        </span>
+      ) : (
+        menuItem.menuTitle
+      );
 
     const renderMenuSubItems = menuItem.menuSubTitles.map((subItem) => {
       const subMenuIsClicked = subItem.menuItemIsClicked;
@@ -71,8 +83,8 @@ const AccordionMenu = () => {
           id={menuItem.id}
           className={
             isClicked
-              ? "flex justify-between cursor-pointer bg-accordionMenuItem text-[#f8fafc]"
-              : "flex justify-between cursor-pointer bg-accordionBgDefault text-[#f8fafc]"
+              ? "relative flex justify-between cursor-pointer bg-accordionMenuItem text-[#f8fafc]"
+              : "relative flex justify-between cursor-pointer bg-accordionBgDefault text-[#f8fafc]"
           }
         >
           <span className="flex items-center text-lg">
@@ -85,11 +97,16 @@ const AccordionMenu = () => {
             >
               {menuItemIcon}
             </span>
-            <span className="py-[13px]">{menuItem.menuTitle}</span>
+            <span className="py-[13px]">{renderMenuItems}</span>
           </span>
           <span className="flex items-center text-toggleIcon text-lg mr-4">
             {toggleIcon}
           </span>
+          {isClicked && (
+            <span className="absolute bottom-[-0.8rem] left-[0.8rem] text-xl text-accordionMenuItem ">
+              <AiFillCaretDown />
+            </span>
+          )}
         </h4>
         {isClicked && (
           <ul className="bg-accordionSelectedBg py-4">{renderMenuSubItems}</ul>
@@ -99,7 +116,9 @@ const AccordionMenu = () => {
   });
 
   return (
-    <div className="bg-accordionBgDefault w-[13rem]">{renderAccordionMenu}</div>
+    <div className="bg-accordionBgDefault w-[14.5rem]">
+      {renderAccordionMenu}
+    </div>
   );
 };
 

@@ -11,8 +11,6 @@ const PostHeader = ({ postDate, postPublished, postDateHour }) => {
 
   const postIsPublished = postPublished === true ? <BiCheck /> : <BiBlock />;
 
-  console.log(postPublished, "postPublished");
-
   return (
     <div className="flex items-center justify-between mx-8">
       <p>

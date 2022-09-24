@@ -22,20 +22,28 @@ const Brands = () => {
       dispatch(accordionActions.updateNotifications(notifications));
     }
 
+    const selectedBrandBar = isClicked && (
+      <div className="absolute left-[-17px] top-0 border w-[0.5rem] h-[2.8rem] border-accordionMenuItem bg-accordionMenuItem rounded-r-md" />
+    );
+
+    const unselectedBrand = !isClicked && (
+      <div className="absolute left-0 top-0 w-[2.7rem] h-[2.6rem] bg-brandsBgDefault opacity-50 cursor-pointer" />
+    );
+
     //styles
     const brandClickedStyle = isClicked
-      ? "opacity-100 w-[6.8rem] h-[2.4rem] rounded-lg border-xl cursor-pointer"
-      : "opacity-50 w-[6.8rem] h-[2.4rem] rounded-lg border-xl cursor-pointer";
+      ? "w-[8.2rem] h-[2.2rem] rounded-lg border-xl cursor-pointer"
+      : "w-[8.2rem] h-[2.2rem] rounded-lg border-xl cursor-pointer";
     const notificationStyle =
       "absolute top-[-0.50rem] right-[-0.45rem] px-1 bg-brandsNotificationBg rounded-full text-sm text-brandsBg cursor-default";
 
     return (
       <div key={brand.id} id={brand.id} onClick={() => clickHandler(brand.id)}>
-        <div className="relative my-[1rem] mx-[0.75rem] mb-[1.3rem] p-[0.2rem] rounded-lg bg-brandsBg">
+        <div className="relative my-[1rem] mx-[0.9rem] mb-[1.3rem] p-[0.2rem] rounded-md bg-brandsBg">
+          {selectedBrandBar}
+          {unselectedBrand}
           <img className={brandClickedStyle} src={brandImage} alt={imgAlt} />
-          <p className={notificationStyle}>
-            {notifications && !isClicked && notifications}
-          </p>
+          <p className={notificationStyle}>{!isClicked && notifications}</p>
         </div>
       </div>
     );

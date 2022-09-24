@@ -17,7 +17,7 @@ export const brandData = [
     isClicked: false,
     src: brandLogo_0,
     alt: "brand 1 logo",
-    notifications: 13,
+    notifications: 0,
   },
   {
     id: 1,
@@ -31,7 +31,7 @@ export const brandData = [
     isClicked: false,
     src: brandLogo_2,
     alt: "brand 3 logo",
-    notifications: 41,
+    notifications: 0,
   },
   {
     id: 3,
@@ -45,14 +45,14 @@ export const brandData = [
     isClicked: false,
     src: brandLogo_4,
     alt: "brand 5 logo",
-    notifications: 82,
+    notifications: 0,
   },
   {
     id: 5,
     isClicked: false,
     src: brandLogo_5,
     alt: "brand 6 logo",
-    notifications: 33,
+    notifications: 0,
   },
 ];
 

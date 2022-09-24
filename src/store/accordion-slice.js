@@ -45,7 +45,6 @@ const updateSubMenuItems = (state, action) => {
 
 const updateNotifications = (state, action) => {
   state[0].notifications = action.payload;
-  state[0].menuTitle = `NOTIFICATIONS ${state[0].notifications}`;
 };
 
 const accordionSlice = createSlice({
