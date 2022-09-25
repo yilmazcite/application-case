@@ -15,7 +15,7 @@ const PostStatus = ({ postStatus, postChannel, postLink }) => {
   return (
     <div
       style={{ backgroundColor: statusColorsData[postStatus].color }}
-      className="h-full flex items-center px-1 rounded-l-xl"
+      className="h-full flex items-center px-[0.6rem] rounded-l-md text-2xl"
     >
       <a href={postLink}>{socialMediaIcon}</a>
     </div>

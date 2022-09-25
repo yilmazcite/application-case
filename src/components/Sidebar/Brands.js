@@ -23,7 +23,7 @@ const Brands = () => {
     }
 
     const selectedBrandBar = isClicked && (
-      <div className="absolute left-[-17px] top-0 border w-[0.5rem] h-[2.8rem] border-accordionMenuItem bg-accordionMenuItem rounded-r-md" />
+      <div className="absolute left-[-1.06rem] top-[-1px] border w-[0.5rem] h-[2.7rem] border-accordionMenuItem bg-accordionMenuItem rounded-r-md" />
     );
 
     const unselectedBrand = !isClicked && (

@@ -12,10 +12,8 @@ const Post = () => {
     const newDate = `${dateSplit[2]} ${month} ${dateSplit[0]}`;
 
     return (
-      //div BEFORE: className="w-3/4"
-      //className="w-[15rem] h-[20]"
-      <div key={i}>
-        <h1>{newDate}</h1>
+      <div key={i} className="mb-[1.7rem]">
+        <h1 className="mb-4 ml-3 text-2xl text-postMessageColor">{newDate}</h1>
         <div className="flex flex-wrap">
           {postsData.map((post) => {
             if (post.date === date) {

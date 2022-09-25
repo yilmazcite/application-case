@@ -10,33 +10,41 @@ const PostReactions = ({ postChannel, postPublished }) => {
     : { like: "0", comment: "0", share: "0", seen: "0" };
   const postReactions =
     postChannel === "twitter" ? (
-      <div className="flex">
-        <span className="flex flex-row items-center mx-2">
-          <BiHeart className="mr-1" /> {reactionQuantity.like}
+      <div className="flex pt-1">
+        <span className="flex flex-row items-center mr-[1.2rem]">
+          <BiHeart className="mr-[0.62rem] text-xl text-postDateIconsColor cursor-pointer" />
+          {reactionQuantity.like}
         </span>
-        <span className="flex flex-row items-center mx-2">
-          <FaRetweet className="mr-1" /> {reactionQuantity.share}
+        <span className="flex flex-row items-center mr-[1.2rem]">
+          <FaRetweet className="mr-[0.62rem] text-xl text-postDateIconsColor cursor-pointer" />
+          {reactionQuantity.share}
         </span>
-        <span className="flex flex-row items-center mx-2">
-          <BiComment className="mr-1" /> {reactionQuantity.comment}
+        <span className="flex flex-row items-center mr-[1.2rem]">
+          <BiComment className="mr-[0.62rem] text-xl text-postDateIconsColor cursor-pointer" />
+          {reactionQuantity.comment}
         </span>
-        <span className="flex flex-row items-center mx-2">
-          <AiOutlineEye className="mr-1" /> {reactionQuantity.seen}
+        <span className="flex flex-row items-center mr-[1.2rem]">
+          <AiOutlineEye className="mr-[0.62rem] text-xl text-postDateIconsColor cursor-pointer" />
+          {reactionQuantity.seen}
         </span>
       </div>
     ) : (
-      <div className="flex">
-        <span className="flex flex-row items-center mx-2">
-          <BiLike className="mr-1" /> {reactionQuantity.like}
+      <div className="flex pt-1">
+        <span className="flex flex-row items-center mr-[1.2rem]">
+          <BiLike className="mr-[0.62rem] text-xl text-postDateIconsColor cursor-pointer" />{" "}
+          {reactionQuantity.like}
         </span>
-        <span className="flex flex-row items-center mx-2">
-          <BiComment className="mr-1" /> {reactionQuantity.comment}
+        <span className="flex flex-row items-center mr-[1.2rem]">
+          <BiComment className="mr-[0.62rem] text-xl text-postDateIconsColor cursor-pointer" />
+          {reactionQuantity.comment}
         </span>
-        <span className="flex flex-row items-center mx-2">
-          <BiShareAlt className="mr-1" /> {reactionQuantity.share}
+        <span className="flex flex-row items-center mr-[1.2rem]">
+          <BiShareAlt className="mr-[0.62rem] text-xl text-postDateIconsColor cursor-pointer" />
+          {reactionQuantity.share}
         </span>
-        <span className="flex flex-row items-center mx-2">
-          <AiOutlineEye className="mr-1" /> {reactionQuantity.seen}
+        <span className="flex flex-row items-center mr-[1.2rem]">
+          <AiOutlineEye className="mr-[0.62rem] text-xl text-postDateIconsColor cursor-pointer" />
+          {reactionQuantity.seen}
         </span>
       </div>
     );

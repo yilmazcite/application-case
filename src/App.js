@@ -4,7 +4,7 @@ import "./index.css";
 
 function App() {
   return (
-    <div className="flex">
+    <div className="flex w-fit">
       <Sidebar />
       <Post />
     </div>

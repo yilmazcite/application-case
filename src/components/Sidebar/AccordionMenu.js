@@ -91,13 +91,19 @@ const AccordionMenu = () => {
             <span
               className={
                 isClicked
-                  ? "text-brandsBg mx-[0.6rem] text-xl"
+                  ? "text-brandsBg mx-[0.6rem] text-xl "
                   : "text-accordionMenuItem mx-[0.6rem] text-xl"
               }
             >
               {menuItemIcon}
             </span>
-            <span className="py-[13px]">{renderMenuItems}</span>
+            <span
+              className={
+                isClicked ? "py-[13px] font-semibold" : "py-[13px] font-light"
+              }
+            >
+              {renderMenuItems}
+            </span>
           </span>
           <span className="flex items-center text-toggleIcon text-lg mr-4">
             {toggleIcon}

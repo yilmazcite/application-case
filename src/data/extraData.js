@@ -92,12 +92,12 @@ export const accordionData = [
       {
         id: uuidv4(),
         menuItem: "Compose",
-        menuItemIsClicked: true,
+        menuItemIsClicked: false,
       },
       {
         id: uuidv4(),
         menuItem: "Feed",
-        menuItemIsClicked: false,
+        menuItemIsClicked: true,
       },
     ],
     isClicked: true,
