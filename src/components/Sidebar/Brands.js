@@ -30,7 +30,7 @@ const Brands = () => {
       "absolute top-[-0.50rem] right-[-0.45rem] px-1 rounded-full text-sm text-brandsBg bg-brandsNotificationBg cursor-default";
     const selectedBrandStyle = isClicked
       ? "absolute left-[-1.06rem] top-[-1px] border w-[0.5rem] h-[2.7rem] border-accordionMenuItem bg-accordionMenuItem rounded-r-md"
-      : "absolute left-0 top-0 w-[2.7rem] h-[2.6rem] bg-brandsBgDefault opacity-60 cursor-pointer";
+      : "absolute fixed left-0 top-0 w-[3.5rem] h-[2.6rem] bg-brandsBgDefault opacity-60 cursor-pointer";
 
     return (
       <div key={brand.id} id={brand.id} onClick={() => clickHandler(brand.id)}>

@@ -2,12 +2,12 @@ import React from "react";
 
 import Brands from "./Brands";
 import AccordionMenu from "./AccordionMenu";
-import socialityBrand from "../../assets/brands/sociality-brand/sociality-brand.png";
+import socialityBrand from "../../assets/brands/sociality-brand/sociality.io.png";
 
 const Sidebar = () => {
   return (
     <section>
-      <div className="flex justify-center bg-socialityBrandBg cursor-pointer">
+      <div className="flex justify-center py-1 bg-socialityBrandBg cursor-pointer">
         <img src={socialityBrand} alt="sociality.io" />
       </div>
       <div className="flex h-full">

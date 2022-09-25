@@ -1,7 +1,10 @@
 import React from "react";
 import PostDataContainer from "./PostMain/PostDataContainer";
-import { postsData, datesOfPostPublication } from "../../data/extraData";
-import { months } from "../../data/extraData";
+import {
+  postsData,
+  datesOfPostPublication,
+  months,
+} from "../../data/extraData";
 import StatusBar from "../Header/StatusBar";
 
 const Post = () => {
