@@ -28,7 +28,7 @@ const Post = () => {
   return (
     <div className="flex flex-col w-full ml-[3rem]">
       <StatusBar />
-      <div>{renderPosts}</div>
+      {renderPosts}
     </div>
   );
 };

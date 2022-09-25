@@ -1,8 +1,8 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { accordionActions } from "../../store/accordion-slice";
-import { AiOutlinePlus, AiOutlineMinus, AiFillCaretDown } from "react-icons/ai";
 
+import { AiOutlinePlus, AiOutlineMinus, AiFillCaretDown } from "react-icons/ai";
 import { MdNotificationsActive, MdOutlineReportProblem } from "react-icons/md";
 import { TbHeartRateMonitor } from "react-icons/tb";
 import { BsPencilSquare } from "react-icons/bs";
@@ -51,7 +51,7 @@ const AccordionMenu = () => {
       menuItem.menuTitle === "NOTIFICATIONS" ? (
         <span>
           {menuItem.menuTitle}
-          <span className="border border-[#3ac183] px-2 rounded-md ml-2">
+          <span className="border border-[#3ac183] px-2 pb-[1px] rounded-md ml-2">
             {menuItem.notifications}
           </span>
         </span>
@@ -91,15 +91,15 @@ const AccordionMenu = () => {
             <span
               className={
                 isClicked
-                  ? "text-brandsBg mx-[0.6rem] text-xl "
-                  : "text-accordionMenuItem mx-[0.6rem] text-xl"
+                  ? "text-brandsBg mx-[0.6rem] text-lg "
+                  : "text-accordionMenuItem mx-[0.6rem] text-lg"
               }
             >
               {menuItemIcon}
             </span>
             <span
               className={
-                isClicked ? "py-[13px] font-semibold" : "py-[13px] font-light"
+                isClicked ? "py-[13px] font-bold" : "py-[13px] font-light"
               }
             >
               {renderMenuItems}

@@ -11,17 +11,19 @@ const PostHeader = ({ postDate, postPublished, postDateHour }) => {
 
   const postIsPublished = postPublished === true ? <BiCheck /> : <BiBlock />;
 
+  const iconStyle = "ml-4 cursor-pointer";
+
   return (
     <div className="flex items-center justify-between text-postDateIconsColor">
       <p>
         {newDate} - {postDateHour}
       </p>
       <div className="flex text-xl mr-1">
-        <span className="ml-4 cursor-pointer">{postIsPublished}</span>
-        <span className="ml-4 cursor-pointer">
+        <span className={iconStyle}>{postIsPublished}</span>
+        <span className={iconStyle}>
           <BiTrash />
         </span>
-        <span className="ml-4 cursor-pointer">
+        <span className={iconStyle}>
           <CgMoreO />
         </span>
       </div>

@@ -7,7 +7,7 @@ const StatusBar = () => {
   const renderStatusInfo = statusColorsData.map((status) => {
     return (
       <div key={status.id}>
-        <li className="flex flex-row items-center">
+        <li className="flex items-center">
           <BulletPoint color={status.color} />
           <span className="ml-[0.5rem] mr-[1.2rem]">
             {status.statusMessage}

@@ -35,7 +35,7 @@ const PostDataContainer = ({ postData }) => {
   return (
     <div className="flex border border-[#e0e1e7] bg-[#fff] rounded-md mb-3 ml-3 mr-[1.5rem] w-[25.5rem] h-fit">
       <div>{postStatus}</div>
-      <div className=" px-[1.25rem] pt-[1.6rem] pb-[1.8rem]">
+      <div className="px-[1.25rem] pt-[1.6rem] pb-[1.8rem]">
         {postHeader}
         {postContent}
         {postFooter}

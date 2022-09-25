@@ -8,48 +8,53 @@ const PostReactions = ({ postChannel, postPublished }) => {
   const reactionQuantity = postPublished
     ? { like: "124", comment: "63", share: "4", seen: "1426" }
     : { like: "0", comment: "0", share: "0", seen: "0" };
+
+  const iconStyle =
+    "mr-[0.62rem] text-xl text-postDateIconsColor cursor-pointer";
+  const iconSpanStyle = "flex flex-row items-center mr-[1.2rem]";
+
   const postReactions =
     postChannel === "twitter" ? (
       <div className="flex pt-1">
-        <span className="flex flex-row items-center mr-[1.2rem]">
-          <BiHeart className="mr-[0.62rem] text-xl text-postDateIconsColor cursor-pointer" />
+        <span className={iconSpanStyle}>
+          <BiHeart className={iconStyle} />
           {reactionQuantity.like}
         </span>
-        <span className="flex flex-row items-center mr-[1.2rem]">
-          <FaRetweet className="mr-[0.62rem] text-xl text-postDateIconsColor cursor-pointer" />
+        <span className={iconSpanStyle}>
+          <FaRetweet className={iconStyle} />
           {reactionQuantity.share}
         </span>
-        <span className="flex flex-row items-center mr-[1.2rem]">
-          <BiComment className="mr-[0.62rem] text-xl text-postDateIconsColor cursor-pointer" />
+        <span className={iconSpanStyle}>
+          <BiComment className={iconStyle} />
           {reactionQuantity.comment}
         </span>
-        <span className="flex flex-row items-center mr-[1.2rem]">
-          <AiOutlineEye className="mr-[0.62rem] text-xl text-postDateIconsColor cursor-pointer" />
+        <span className={iconSpanStyle}>
+          <AiOutlineEye className={iconStyle} />
           {reactionQuantity.seen}
         </span>
       </div>
     ) : (
       <div className="flex pt-1">
-        <span className="flex flex-row items-center mr-[1.2rem]">
-          <BiLike className="mr-[0.62rem] text-xl text-postDateIconsColor cursor-pointer" />{" "}
+        <span className={iconSpanStyle}>
+          <BiLike className={iconStyle} />
           {reactionQuantity.like}
         </span>
-        <span className="flex flex-row items-center mr-[1.2rem]">
-          <BiComment className="mr-[0.62rem] text-xl text-postDateIconsColor cursor-pointer" />
+        <span className={iconSpanStyle}>
+          <BiComment className={iconStyle} />
           {reactionQuantity.comment}
         </span>
-        <span className="flex flex-row items-center mr-[1.2rem]">
-          <BiShareAlt className="mr-[0.62rem] text-xl text-postDateIconsColor cursor-pointer" />
+        <span className={iconSpanStyle}>
+          <BiShareAlt className={iconStyle} />
           {reactionQuantity.share}
         </span>
-        <span className="flex flex-row items-center mr-[1.2rem]">
-          <AiOutlineEye className="mr-[0.62rem] text-xl text-postDateIconsColor cursor-pointer" />
+        <span className={iconSpanStyle}>
+          <AiOutlineEye className={iconStyle} />
           {reactionQuantity.seen}
         </span>
       </div>
     );
 
-  return <div>{postReactions}</div>;
+  return <>{postReactions}</>;
 };
 
 export default PostReactions;
