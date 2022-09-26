@@ -19,10 +19,9 @@ const Post = () => {
         <h1 className="mb-4 ml-3 text-2xl text-postMessageColor">{newDate}</h1>
         <div className="flex flex-wrap">
           {postsData.map((post) => {
-            if (post.date === date) {
-              return <PostDataContainer key={post.id} postData={post} />;
-            }
-          })}
+            return post.date === date ? <PostDataContainer key={post.id} postData={post} /> : null;
+            })
+          }
         </div>
       </div>
     );

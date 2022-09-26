@@ -23,7 +23,7 @@ const StatusBar = () => {
       <div>
         <img
           src={userProfilePicture}
-          alt="user profile picture"
+          alt="user profile visual"
           className="mr-10 w-[4.3rem] cursor-pointer"
         />
       </div>
